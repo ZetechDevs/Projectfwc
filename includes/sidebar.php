@@ -5,11 +5,11 @@
         <a href="#">About Us</a>
         <a href="#">Services</a>
         <a href="#">Music</a>
-        <a href="#">Podcast</a>
+        <a href="#">Podcast remote</a>
     </nav>
 
     <div class="socials">
-        <a href="#">🌐 Facebook</a>
+        <a href="#">🛜 Facebook</a>
         <a href="#">📷 Instagram</a>
         <a href="#">❌ X</a>
     </div>
