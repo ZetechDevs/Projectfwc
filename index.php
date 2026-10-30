@@ -1,17 +1,5 @@
 <!DOCTYPE html>
-<!--
-    ╔══════════════════════════════════════════════════════╗
-    ║  FAITH CONNECT — index.php (Landing Page)            ║
-    ║                                                      ║
-    ║  ⚠️  THIS FILE IS SELF-CONTAINED.                    ║
-    ║  DO NOT add include("header.php"),                   ║
-    ║          include("sidebar.php"),                     ║
-    ║       or include("footer.php") to this file.        ║
-    ║                                                      ║
-    ║  Those includes are only for login.php /            ║
-    ║  register.php and other inner pages.                 ║
-    ╚══════════════════════════════════════════════════════╝
--->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Site stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style1.css">
+    <link rel="stylesheet" href="/projectfwc/assets/css/style1.css">
 </head>
 <body>
 
@@ -45,7 +33,7 @@
         <div>
             <!-- Logo -->
             <div class="sidebar-logo">
-                <img src="/assets/images/logo.png" alt="Faith Connect">
+                <img src="/projectfwc/assets/images/logo2.png" alt="Faith Connect">
                 <span>Faith Connect</span>
             </div>
 
@@ -101,8 +89,8 @@
                 <span>Faith Connect</span>
             </div>
             <div class="auth-buttons">
-                <a href="/auth/login.php"    class="btn-glass">Login</a>
-                <a href="/auth/register.php" class="btn-solid">Register</a>
+                <a href="/projectfwc/auth/login.php"    class="btn-glass">Login</a>
+                <a href="/projectfwc/auth/register.php" class="btn-solid">Register</a>
             </div>
         </header>
         <!-- /TOP HEADER -->
