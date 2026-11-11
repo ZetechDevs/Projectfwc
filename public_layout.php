@@ -1,9 +1,5 @@
 <?php
-/*
- * includes/public_layout.php
- * Shared header/footer for public pages (about, contact, privacy).
- * Uses your existing /assets/css/style1.css (teal glass theme).
- */
+
 require_once __DIR__ . '/site.php';
 
 function e($s) { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }

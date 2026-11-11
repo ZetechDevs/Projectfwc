@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         pointer-events: none;
     }
 
-    /* Top bar */
+  
     .top-bar {
         position: relative;
         z-index: 10;
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         text-underline-offset: 3px;
     }
 
-    /* Page centre */
+   
     .page-center {
         flex: 1;
         display: flex;
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         z-index: 1;
     }
 
-    /* Card */
+   
     .card {
         width: 100%;
         max-width: 420px;
@@ -175,7 +175,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         margin-bottom: 28px;
     }
 
-    /* Error */
+   
     .error-box {
         background: rgba(231,76,60,0.18);
         border: 1px solid rgba(231,76,60,0.45);
@@ -186,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         margin-bottom: 20px;
     }
 
-    /* Form */
+   
     .form-group {
         display: flex;
         flex-direction: column;
@@ -223,7 +223,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         box-shadow: 0 0 0 3px rgba(255,255,255,0.10);
     }
 
-    /* Submit */
+  
     .btn-submit {
         width: 100%;
         padding: 13px;
@@ -245,7 +245,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         transform: translateY(-1px);
     }
 
-    /* Footer link */
     .card-footer {
         text-align: center;
         font-size: 14px;
@@ -260,7 +259,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         text-underline-offset: 3px;
     }
 
-    /* Page footer */
+   
     .page-footer {
         position: relative;
         z-index: 1;

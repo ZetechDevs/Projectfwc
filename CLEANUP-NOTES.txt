@@ -13,11 +13,15 @@ Completed in this version
 - Checked PHP syntax for every PHP file with PHP 8.4.
 
 TODO - OWNER ACTIONS
-1. Avatar uploads were intentionally NOT changed, as requested. They still need secure server-side file validation and safe generated filenames.
-2. Add a real, monitored support email in site.php. It is currently blank.
-3. Change the database password in the hosting control panel. The original ZIP contains database credentials, so treat that password as exposed. Update config/db.php with the new password.
-4. Review the remaining dashboard SQL queries and convert user-provided values to prepared statements. Login now uses a prepared statement; the dashboard queries have not all been refactored because a broad rewrite could make the learning project harder to follow or change its behaviour.
-5. The icon stylesheet is loaded from Font Awesome CDN. Icons require an internet connection. A locally hosted icon library can be added later if desired.
-6. Review the remaining static claims on the landing page (for example, the number of religions supported) and keep only claims you can verify.
 
-No database schema was changed. Existing uploaded profile images were preserved.
+
+
+4. Review the remaining dashboard SQL queries and convert user-provided values to prepared statements.
+ Login now uses a prepared statement; the dashboard queries have not all been refactored 
+ because a broad rewrite could make the learning project harder to follow or change its behaviour.
+5. The icon stylesheet is loaded from Font Awesome CDN. 
+Icons require an internet connection. A locally hosted icon library can be added later if desired.
+6. Review the remaining static claims on the landing page
+ (for example, the number of religions supported) and keep only claims you can verify.
+
+

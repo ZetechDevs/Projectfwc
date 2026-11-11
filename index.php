@@ -1,31 +1,19 @@
 <!DOCTYPE html>
-<!--
-    ╔══════════════════════════════════════════════════════╗
-    ║  FAITH CONNECT — index.php (Landing Page)            ║
-    ║                                                      ║
-    ║  ⚠️  THIS FILE IS SELF-CONTAINED.                    ║
-    ║  DO NOT add include("header.php"),                   ║
-    ║          include("sidebar.php"),                     ║
-    ║       or include("footer.php") to this file.        ║
-    ║                                                      ║
-    ║  Those includes are only for login.php /            ║
-    ║  register.php and other inner pages.                 ║
-    ╚══════════════════════════════════════════════════════╝
--->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faith Connect — Spiritual Guidance Platform</title>
 
-    <!-- Google Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome (social icons) -->
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Site stylesheet -->
+ 
     <link rel="stylesheet" href="/assets/css/style1.css">
 </head>
 <body>
@@ -37,9 +25,7 @@
 
 <div class="page-wrap">
 
-    <!-- ════════════════════════════════════
-         SIDEBAR
-    ════════════════════════════════════ -->
+   
     <aside class="sidebar" id="sidebar">
 
         <div>
@@ -75,22 +61,14 @@
             <a href="/auth/register.php" class="btn-solid"  style="display:block;text-align:center;padding:10px">Get Started</a>
 
             <div class="socials">
-                <a href="#" class="social-icon fb" title="Facebook">  <i class="fab fa-facebook-f"></i>  </a>
-                <a href="#" class="social-icon ig" title="Instagram"> <i class="fab fa-instagram"></i>   </a>
-                <a href="#" class="social-icon yt" title="YouTube">   <i class="fab fa-youtube"></i>     </a>
-                <a href="#" class="social-icon tw" title="X/Twitter"> <i class="fab fa-x-twitter"></i>  </a>
-                <a href="#" class="social-icon tk" title="TikTok">    <i class="fab fa-tiktok"></i>      </a>
+                
                 <a href="#" class="social-icon wa" title="WhatsApp">  <i class="fab fa-whatsapp"></i>    </a>
             </div>
         </div>
 
     </aside>
-    <!-- /SIDEBAR -->
+    <!-- Sidebar -->
 
-
-    <!-- ════════════════════════════════════
-         MAIN
-    ════════════════════════════════════ -->
     <div class="main">
 
         <!-- TOP HEADER -->
@@ -105,13 +83,11 @@
                 <a href="/auth/register.php" class="btn-solid">Register</a>
             </div>
         </header>
-        <!-- /TOP HEADER -->
+        
 
         <div class="content-area">
 
-            <!-- ════════════════════════════
-                 HOME
-            ════════════════════════════ -->
+            <!--home section-->
             <div id="home" class="section active">
                 <div class="hero-wrap">
                     <div class="hero-inner">
@@ -174,9 +150,7 @@
             <!-- /HOME -->
 
 
-            <!-- ════════════════════════════
-                 ABOUT US
-            ════════════════════════════ -->
+            <!--About-->
             <div id="about" class="section">
                 <div class="sec-wrap">
 
@@ -231,10 +205,7 @@
                     <p class="sec-sub">Real feedback from our community</p>
 
                     <?php
-                    /*
-                     * reviews: id, user_id, leader_id, review_text, rating, created_at
-                     * Fetch: leader name + pfp, reviewer name + pfp, rating, text
-                     */
+                    
                     $rev_res = mysqli_query($conn,
                         "SELECT r.review_text, r.rating,
                                 u.full_name  AS reviewer,
@@ -309,9 +280,7 @@
             <!-- /ABOUT US -->
 
 
-            <!-- ════════════════════════════
-                 SERVICES
-            ════════════════════════════ -->
+            <!-- SERVICES-->
             <div id="services" class="section">
                 <div class="sec-wrap">
 
@@ -367,9 +336,7 @@
             <!-- /SERVICES -->
 
 
-            <!-- ════════════════════════════
-                 MUSIC
-            ════════════════════════════ -->
+            <!-- MUSIC -->
             <div id="music" class="section">
                 <div class="sec-wrap">
 
@@ -448,9 +415,7 @@
             <!-- /MUSIC -->
 
 
-            <!-- ════════════════════════════
-                 PODCAST
-            ════════════════════════════ -->
+            <!-- PODCAST -->
             <div id="podcast" class="section">
                 <div class="sec-wrap">
 
@@ -461,49 +426,45 @@
                     </p>
 
                     <?php
-                    /*
-                     * YouTube Video IDs — all from major channels with millions of views.
-                     * To swap a video: go to the YouTube video, copy the ID from the URL
-                     * (the part after ?v= or /watch?v=) and paste it as the 'id' value below.
-                     */
+                   
                     $podcasts = array(
                         array(
-                            /* The Bible Project — "What is the Bible?" — 7M+ views, very stable */
+                            /* The Bible Project */
                             'id'    => 'ak06MSETeo4',
                             'title' => 'What is the Bible? — The Bible Project',
                             'ch'    => 'The Bible Project',
                             'tag'   => '✝️ Christianity',
                         ),
                         array(
-                            /* Nouman Ali Khan — "Who is Allah?" — millions of views, Islamic Guidance */
+                            /* Nouman Ali Khan*/
                             'id'    => 'e7YWPJ_fSoc',
                             'title' => 'Who is Allah? — Understanding Islam',
                             'ch'    => 'Nouman Ali Khan',
                             'tag'   => '☪️ Islam',
                         ),
                         array(
-                            /* Sadhguru — "How to Meditate for Beginners" — Official Sadhguru channel */
+                            /* How to Meditate for Beginners */
                             'id'    => 'Ilg3Bg51tKw',
                             'title' => 'How to Meditate — Sadhguru',
                             'ch'    => 'Sadhguru',
                             'tag'   => '🕉️ Hinduism',
                         ),
                         array(
-                            /* Alan Watts — "The Art of Meditation" — classic, millions of views */
+                            /* The Art of Meditation*/
                             'id'    => 'PJggfBMRNRs',
                             'title' => 'The Art of Meditation — Alan Watts',
                             'ch'    => 'Alan Watts',
                             'tag'   => '☸️ Buddhism',
                         ),
                         array(
-                            /* Confirmed working by site owner — Spiritual Motivation */
+                            /*  Spiritual Motivation */
                             'id'    => 'MIr3RsUWrdo',
                             'title' => 'Daily Spiritual Motivation',
                             'ch'    => 'Motivation2Study',
                             'tag'   => '<i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Spirituality',
                         ),
                         array(
-                            /* Rabbi Lord Jonathan Sacks — "The Meaning of Life" — very popular */
+                            /*  "The Meaning of Life" */
                             'id'    => 'R6ISJ_x5yQE',
                             'title' => 'The Meaning of Life — Rabbi Jonathan Sacks',
                             'ch'    => 'Rabbi Sacks',
@@ -535,7 +496,7 @@
             <!-- /PODCAST -->
 
 
-        </div><!-- /content-area -->
+        </div>
 
         <!-- FOOTER -->
         <footer class="footer">
@@ -544,9 +505,9 @@
 
     </div><!-- /main -->
 
-</div><!-- /page-wrap -->
+</div>
 
-<!-- Site JavaScript -->
+
 <script src="/assets/js/script.js"></script>
 
 </body>
