@@ -1,0 +1,170 @@
+/* ══════════════════════════════════════════════════════════
+   FAITH CONNECT — dashboard-mobile.css
+   Makes the dashboard sidebar retractable on phones/tablets.
+
+   Used by: dashboards/user.php, admin.php, leader.php
+   Load it AFTER each page's own <style> block so it can
+   override the fixed-width desktop sidebar.
+
+   Desktop (> 900px)  : nothing changes — sidebar stays on the left.
+   Mobile  (<= 900px) : sidebar slides in as a drawer over the page,
+                        opened with the ☰ button in the top bar.
+══════════════════════════════════════════════════════════ */
+
+/* ── Hidden on desktop ───────────────────────────────── */
+.menu-btn,
+.sb-close,
+.sb-backdrop {
+  display: none;
+}
+
+@media (max-width: 900px) {
+
+  /* Use the *visible* viewport height on phones
+     (100vh is too tall on mobile browsers with a URL bar) */
+  .app,
+  .main {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* ── Sidebar becomes an off-canvas drawer ─────────── */
+  .sidebar {
+    --sbm: var(--sb-bg, var(--sb));   /* user/leader use --sb-bg, admin uses --sb */
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: min(280px, 82vw);
+    z-index: 1000;
+
+    /* Opaque base so page content doesn't show through the drawer */
+    background:
+      linear-gradient(var(--sbm), var(--sbm)),
+      linear-gradient(135deg, var(--bg1), var(--bg2));
+
+    transform: translateX(-100%);
+    visibility: hidden;                 /* keeps closed drawer out of tab order */
+    transition: transform .28s ease, visibility 0s linear .28s;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: 8px 0 32px rgba(0, 0, 0, .35);
+    transition: transform .28s ease, visibility 0s;
+  }
+
+  /* Close (✕) button inside the drawer */
+  .sb-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    border: 1px solid var(--gb, var(--border));
+    background: var(--glass2, var(--glass));
+    color: var(--txt);
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  /* Dark overlay behind the open drawer */
+  .sb-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, .5);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .28s ease;
+  }
+  .sb-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ── Top bar: ☰ button + title + right-hand controls ── */
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--gb, var(--border));
+    background: var(--glass2, var(--glass));
+    color: var(--txt);
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .menu-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    fill: none;
+  }
+
+  .topbar {
+    padding: 10px 14px;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  .topbar > div:not(.topbar-right) {
+    flex: 1;
+    min-width: 0;                       /* lets long titles truncate instead of overflowing */
+  }
+  .topbar-title,
+  .topbar-sub {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .topbar-title { font-size: 19px; }
+  .topbar-right {
+    margin-left: auto;
+    flex-shrink: 0;
+    gap: 8px;
+  }
+
+  /* ── Content gets the full screen width ───────────── */
+  .content { padding: 16px 14px; }
+
+  /* ── Messages: stack conversation list above the chat ─ */
+  .rooms-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: min(560px, calc(100dvh - 150px));
+    min-height: 380px;
+  }
+  .rlist {
+    display: block;                     /* leader.php used to hide this on small screens */
+    max-height: 150px;
+    border-right: none;
+    border-bottom: 1px solid var(--gb, var(--border));
+  }
+  .rprev { max-width: 60vw; }
+  .bubble { max-width: 85%; }
+}
+
+/* ── Small phones ──────────────────────────────────────── */
+@media (max-width: 480px) {
+  .topbar-sub { display: none; }
+  .topbar-right .chip { display: none; }   /* admin "Admin" pill */
+  .theme-toggle,
+  .theme-btn { padding: 6px 10px; font-size: 12px; }
+}

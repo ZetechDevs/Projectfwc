@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /dashboards/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /assets/uploads/
+
+Sitemap: https://faithworldconnect.infinityfreeapp.com/sitemap.xml
